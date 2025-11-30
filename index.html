@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharva Gogawale - AI Researcher</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter and Fira Code for terminal look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Set Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* A little extra style for the nav link active state */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4f46e5; /* Indigo 600 */
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after,
+        .nav-link:focus::after {
+            width: 100%;
+        }
+
+        /* Terminal cursor blinking animation */
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Name/Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-gray-900">Sharva Gogawale</a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">About</a>
+                    <a href="#research" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Research</a>
+                    <a href="#publications" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Publications</a>
+                    <a href="#news" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">News</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Contact</a>
+                    <!-- You can link your actual resume PDF here -->
+                    <a href="./assets/documents/Sharva_Gogawale_Resume_PhD2026.pdf" target="_blank" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Resume</a>
+                </div>
+                <!-- Simple Mobile Menu Button (can be expanded later) -->
+                <div class="sm:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section: About Me (Hero) -->
+        <section id="about" class="py-20 md:py-28">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-3 mb-8">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 font-mono italic">
+                        <span class="text-green-400">$</span> <span id="typing-text"></span>
+                    </h1>
+                </div>
+                <div class="md:col-span-2">
+                    <!-- This text is adapted from your SOP intro -->
+                    <p class="text-lg text-gray-600 leading-relaxed space-y-4">
+                        <span>
+                            I am a researcher passionate about building AI systems that are socially responsible and impactful.
+                        </span>
+                        <span class="block mt-4">
+                            My research journey has been intentionally interdisciplinary, focusing on developing novel AI applications for human-centric fields like <strong>healthcare</strong>, <strong>education</strong>, and the <strong>digital humanities</strong>.
+                        </span>
+                        <span class="block mt-4">
+                            My work centers on two main goals: (1) Leveraging the rapid growth of large-scale models to make meaningful contributions to these fields, and (2) Enhancing data-driven methods to build more representative, fair, and unbiased systems.
+                        </span>
+                         <span class="block mt-4">
+                            I am actively seeking a PhD position to further this research, with a long-term goal of leading a lab dedicated to AI for social good.
+                        </span>
+                    </p>
+                </div>
+                <!-- Profile Image with Social Links -->
+                <div class="flex flex-col items-center">
+                    <img class="rounded-lg shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover mb-6" 
+                         src="./assets/images/personal_photo.jpg" 
+                         alt="A professional headshot of Sharva Gogawale">
+                    
+                    <!-- Social Links under photo -->
+                    <div class="flex gap-4 flex-wrap justify-center">
+                        <!-- Email -->
+                        <a href="mailto:sharvag@mail.tau.ac.il" class="text-gray-600 hover:text-indigo-600 transition-colors" title="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </a>
+                        
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/sharva-gogawale/" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors" title="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.141-.926 2.065-2.065 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Twitter/X -->
+                        <a href="https://twitter.com/SharvaGogawale" target="_blank" class="text-gray-600 hover:text-blue-400 transition-colors" title="Twitter/X">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- GitHub -->
+                        <a href="https://github.com/SharvaGogawale1" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors" title="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Google Scholar -->
+                        <a href="#" class="text-gray-600 hover:text-blue-700 transition-colors" title="Google Scholar">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- CV/Resume -->
+                        <a href="./assets/documents/Sharva_Gogawale_Resume_PhD2026.pdf" target="_blank" class="text-gray-600 hover:text-red-600 transition-colors" title="Download CV">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Research -->
+        <section id="research" class="py-20">
+            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
+                Research
+            </h2>
+            <p class="mt-4 text-lg text-center text-gray-600 max-w-3xl mx-auto">
+                My work focuses on applying AI to human-centric domains. Below are my core research areas.
+            </p>
+
+            <!-- Research Cards Grid -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: AI in Healthcare -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex-shrink-0 mb-4">
+                        <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600">
+                            <!-- SVG Icon: Heart -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">AI in Healthcare</h3>
+                    <p class="text-gray-600">
+                        Developing equitable, non-invasive diagnostic tools. My work includes using diffusion models for 3D reconstruction of coronary arteries from X-rays and SAM-based segmentation for stenosis assessment.
+                    </p>
+                </div>
+
+                <!-- Card 2: AI in Digital Humanities -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex-shrink-0 mb-4">
+                        <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600">
+                            <!-- SVG Icon: Book/Scroll -->
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13.5M12 6.253a1.5 1.5 0 011.5 1.5H12a1.5 1.5 0 01-1.5-1.5H12zM12 6.253a1.5 1.5 0 001.5 1.5h-3a1.5 1.5 0 001.5-1.5zM12 6.253v-1.5c1.33 0 2.5 1.5 2.5 3H12V4.753zM12 6.253v-1.5c-1.33 0-2.5 1.5-2.5 3H12V4.753zM9.5 6.253a1.5 1.5 0 00-1.5 1.5h3a1.5 1.5 0 00-1.5-1.5zM14.5 6.253a1.5 1.5 0 011.5 1.5h-3a1.5 1.5 0 011.5-1.5z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">AI in Digital Humanities</h3>
+                    <p class="text-gray-600">
+                        Preserving cultural heritage with computer vision. I have developed systems for layout classification, handwriting recognition, and computational paleography for medieval Hebrew manuscripts and Dead Sea Scrolls.
+                    </p>
+                </div>
+
+                <!-- Card 3: AI in Education & Society -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex-shrink-0 mb-4">
+                        <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600">
+                            <!-- SVG Icon: Users/Group -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-2.12l-1.42 1.42A3 3 0 0017 20zM7 4v1.5M7 7.5a2.5 2.5 0 010-5C8.379 2.5 9.5 3.621 9.5 5c0 1.379-1.121 2.5-2.5 2.5zM12.5 10a2.5 2.5 0 010-5C13.879 5 15 6.121 15 7.5c0 1.379-1.121 2.5-2.5 2.5zM3.5 10a2.5 2.5 0 010-5C4.879 5 6 6.121 6 7.5c0 1.379-1.121 2.5-2.5 2.5zM17 8c-1.379 0-2.5-1.121-2.5-2.5 0-1.379 1.121-2.5 2.5-2.5s2.5 1.121 2.5 2.5c0 1.379-1.121 2.5-2.5 2.5zM7 11.5c-1.657 0-3 1.343-3 3V20h6v-5.5c0-1.657-1.343-3-3-3zM12.5 12.5c-1.657 0-3 1.343-3 3V20h6v-4.5c0-1.657-1.343-3-3-3z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">AI in Education & Society</h3>
+                    <p class="text-gray-600">
+                        Building systems to improve human experience. This includes real-time attentiveness tracking for e-learning and developing LLM-based agents to detect and mitigate online misinformation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Publications -->
+        <section id="publications" class="py-20">
+            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
+                Publications
+            </h2>
+            <div class="mt-16 max-w-3xl mx-auto">
+                <ul class="space-y-8">
+                    
+                    <!-- Publication items from your resume -->
+                    <!-- I've added a few as examples. You can continue this pattern. -->
+                    
+                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
+                        <p class="text-sm font-medium text-indigo-600">[C4] Submitted to ACL ARR</p>
+                        <h3 class="font-semibold text-lg text-gray-900 mt-1">A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Carmel Kronfeld, <strong>Sharva Gogawale</strong>, Ofer Weintraub, Tetsuro Kobayashi, Irad Ben Gal</p>
+                    </li>
+
+                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
+                        <p class="text-sm font-medium text-indigo-600">[C3] CHR 2025</p>
+                        <h3 class="font-semibold text-lg text-gray-900 mt-1">Classifying Medieval Manuscripts by Pen and Support</h3>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Sharva Gogawale</strong> et al.</p>
+                        <a href="#" class="text-sm font-medium text-indigo-500 hover:text-indigo-700 mt-2 inline-block">[Paper Link]</a>
+                    </li>
+                    
+                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
+                        <p class="text-sm font-medium text-indigo-600">[C2] KDIR 2025</p>
+                        <h3 class="font-semibold text-lg text-gray-900 mt-1">Real-Time Attentiveness Detection and Adaptive Feedback in Online Learning Using Facial Expression Recognition and LLMs</h3>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Sharva Gogawale</strong>, Madhura Deshpande, Parteek Kumar, Irad Ben-Gal</p>
+                        <a href="#" class="text-sm font-medium text-indigo-500 hover:text-indigo-700 mt-2 inline-block">[Paper Link]</a>
+                    </li>
+
+                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
+                        <p class="text-sm font-medium text-indigo-600">[J2] magazén 2024</p>
+                        <h3 class="font-semibold text-lg text-gray-900 mt-1">LayNet: End-to-End Layout Classification for Enhancing Image Preparation in Historical Documents</h3>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Sharva Gogawale</strong>, Berat Kurar-Barakat, Daria Vasyutinsky Shapira, Nachum Dershowitz</p>
+                        <a href="#" class="text-sm font-medium text-indigo-500 hover:text-indigo-700 mt-2 inline-block">[Paper Link]</a>
+                    </li>
+                    
+                    <!-- Add remaining publications here -->
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section: News and Updates -->
+        <section id="news" class="py-20">
+            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
+                News & Updates
+            </h2>
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    
+                    <!-- News Item 1 -->
+                    <div class="border-l-4 border-indigo-500 pl-6 py-4">
+                        <div class="flex items-center gap-4 mb-2">
+                            <span class="text-sm font-medium text-indigo-600">November 2025</span>
+                            <span class="w-2 h-2 bg-indigo-500 rounded-full"></span>
+                        </div>
+                        <h3 class="font-semibold text-lg text-gray-900 mb-2">Paper Submitted to ACL ARR</h3>
+                        <p class="text-gray-600">Our work on "A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement" has been submitted to ACL ARR.</p>
+                    </div>
+
+                    <!-- News Item 2 -->
+                    <div class="border-l-4 border-green-500 pl-6 py-4">
+                        <div class="flex items-center gap-4 mb-2">
+                            <span class="text-sm font-medium text-green-600">October 2025</span>
+                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        </div>
+                        <h3 class="font-semibold text-lg text-gray-900 mb-2">Papers Accepted at CHR 2025 and KDIR 2025</h3>
+                        <p class="text-gray-600">Excited to share that two papers have been accepted for publication at CHR 2025 and KDIR 2025 conferences.</p>
+                    </div>
+
+                    <!-- News Item 3 -->
+                    <div class="border-l-4 border-blue-500 pl-6 py-4">
+                        <div class="flex items-center gap-4 mb-2">
+                            <span class="text-sm font-medium text-blue-600">September 2024</span>
+                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        </div>
+                        <h3 class="font-semibold text-lg text-gray-900 mb-2">Publication in magazén Journal</h3>
+                        <p class="text-gray-600">Our paper "LayNet: End-to-End Layout Classification for Enhancing Image Preparation in Historical Documents" has been published in magazén.</p>
+                    </div>
+
+                    <!-- Add more news items as needed -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contact Me -->
+        <section id="contact" class="py-20">
+            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
+                Contact Me
+            </h2>
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- Contact Information -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
+                        <p class="text-gray-600 mb-8">
+                            I'm always interested in discussing research collaborations, PhD opportunities, or potential projects in AI for social good. Feel free to reach out!
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <a href="mailto:sharvag@mail.tau.ac.il" class="text-gray-900 hover:text-indigo-600">sharvag@mail.tau.ac.il</a>
+                            </div>
+                            
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span class="text-gray-900">Tel Aviv, Israel</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+                                </svg>
+                                <span class="text-gray-900">Tel Aviv University</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact Form or Additional Info -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-6">Research Interests</h3>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-gray-900 mb-2">Collaboration Areas</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• AI in Healthcare & Medical Imaging</li>
+                                    <li>• Digital Humanities & Cultural Heritage</li>
+                                    <li>• Educational Technology & E-learning</li>
+                                    <li>• Computer Vision & NLP Applications</li>
+                                    <li>• Bias Detection & Fair AI Systems</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-gray-900 mb-2">Current Focus</h4>
+                                <p class="text-gray-600">
+                                    Actively seeking PhD opportunities in AI research with a focus on social good and human-centric applications.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 bg-gray-100 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex justify-center space-x-6">
+                <!-- Add links to your profiles -->
+                <a href="mailto:sharvag@mail.tau.ac.il" class="text-gray-500 hover:text-gray-700">
+                    <span class="sr-only">Email</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-gray-700">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.128 0c0 1.141-.926 2.065-2.065 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path>
+                    </svg>
+                </a>
+                <!-- Example: Google Scholar -->
+                <a href="#" class="text-gray-500 hover:text-gray-700">
+                    <span class="sr-only">Google Scholar</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 24a7.2 7.2 0 1 1 7.2-7.2A7.2 7.2 0 0 1 12 24M5.525 12.061l5.96 3.123L17.447 12l-5.96-3.123L5.525 12.061M12 12.87l5.96 3.123v-2.01l-5.96-3.123-5.96 3.123v2.01L12 12.87z"></path>
+    <path d="M12 4.41L1.927 9.875v8.01L12 23.01l10.073-5.125v-8.01L12 4.41zm0 2.21l8.073 4.41v5.923l-8.073 4.128-8.073-4.128V11.03l8.073-4.41z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="mt-8 text-center text-sm text-gray-500">
+                &copy; 2025 Sharva Gogawale. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Terminal typing animation
+        const text = "Hello 👋 I'm Sharva Gogawale";
+        const typingElement = document.getElementById('typing-text');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Adjust speed here (milliseconds)
+            } else {
+                // Add blinking cursor after typing is complete
+                const cursor = document.createElement('span');
+                cursor.innerHTML = '|';
+                cursor.style.animation = 'blink 1s infinite';
+                cursor.className = 'text-green-400';
+                typingElement.parentNode.appendChild(cursor);
+            }
+        }
+
+        // Start typing animation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(typeWriter, 500); // Start after 500ms delay
+        });
+    </script>
+
+</body>
+</html>
