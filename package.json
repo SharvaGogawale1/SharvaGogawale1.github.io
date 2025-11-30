@@ -1,0 +1,30 @@
+{
+  "name": "sharva-gogawale-website",
+  "version": "1.0.0",
+  "description": "Personal website for Sharva Gogawale - AI Researcher",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html",
+    "start": "live-server --port=3000 --open=index.html",
+    "build": "echo 'Static website - no build step required'",
+    "serve": "live-server --port=8080 --open=index.html",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "personal-website",
+    "portfolio",
+    "ai-researcher",
+    "academic",
+    "tailwindcss"
+  ],
+  "author": "Sharva Gogawale <sharvag@mail.tau.ac.il>",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharvag/personal-website.git"
+  },
+  "homepage": "https://sharvag.github.io/personal-website"
+}
