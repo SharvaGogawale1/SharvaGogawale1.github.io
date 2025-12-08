@@ -37,7 +37,7 @@
             bottom: -4px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #4f46e5; /* Indigo 600 */
+            background-color: #70A7C2;
             transition: width 0.3s;
         }
         .nav-link:hover::after,
@@ -50,6 +50,27 @@
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
         }
+
+        /* Dark theme styles */
+        .dark {
+            background-color: #1a1a1a;
+            color: #e5e5e5;
+        }
+        .dark .bg-white { background-color: #2d2d2d; }
+        .dark .bg-gray-50 { background-color: #1a1a1a; }
+        .dark .text-gray-900 { color: #e5e5e5; }
+        .dark .text-gray-800 { color: #d1d5db; }
+        .dark .text-gray-700 { color: #9ca3af; }
+        .dark .text-gray-600 { color: #6b7280; }
+        .dark .border-gray-300 { border-color: #4b5563; }
+        .dark .border-gray-200 { border-color: #374151; }
+        .dark .border-gray-100 { border-color: #374151; }
+        .dark .bg-gray-100 { background-color: #374151; }
+        .dark .bg-gray-50\/30 { background-color: rgba(45, 45, 45, 0.3); }
+        .dark header { background-color: rgba(45, 45, 45, 0.9); }
+        .dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.05); }
+        .dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1); }
+        .dark .shadow-xl { box-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -63,14 +84,23 @@
                     <a href="#" class="text-2xl font-bold text-gray-900">Sharva Gogawale</a>
                 </div>
                 <!-- Navigation Links -->
-                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">About</a>
-                    <a href="#research" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Research</a>
-                    <a href="#publications" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Publications</a>
-                    <a href="#news" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">News</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Contact</a>
-                    <!-- You can link your actual resume PDF here -->
-                    <a href="./assets/documents/Sharva_Gogawale_Resume_PhD2026.pdf" target="_blank" class="nav-link text-gray-700 hover:text-indigo-600 inline-flex items-center px-1 pt-1 font-medium">Resume</a>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8 items-center">
+                    <a href="#about" class="nav-link text-gray-700 inline-flex items-center px-1 pt-1 font-medium" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">About</a>
+                    <a href="#research" class="nav-link text-gray-700 inline-flex items-center px-1 pt-1 font-medium" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">Research</a>
+                    <a href="#publications" class="nav-link text-gray-700 inline-flex items-center px-1 pt-1 font-medium" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">Publications</a>
+                    <a href="#news" class="nav-link text-gray-700 inline-flex items-center px-1 pt-1 font-medium" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">News</a>
+                    <a href="#contact" class="nav-link text-gray-700 inline-flex items-center px-1 pt-1 font-medium" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">Contact</a>
+                    <a href="./assets/documents/Sharva_Gogawale_Resume_PhD2026.pdf" target="_blank" class="nav-link text-gray-700 inline-flex items-center px-1 pt-1 font-medium" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">Resume</a>
+                    
+                    <!-- Night Mode Toggle -->
+                    <button onclick="toggleNightMode()" id="night-mode-btn" class="ml-4 p-2 rounded-md transition-colors duration-300" style="color: #70A7C2; border: 1px solid #70A7C2;" onmouseover="this.style.backgroundColor='#70A7C2'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#70A7C2';" title="Toggle Night Mode">
+                        <svg id="moon-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
+                        </svg>
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </button>
                 </div>
                 <!-- Simple Mobile Menu Button (can be expanded later) -->
                 <div class="sm:hidden">
@@ -85,43 +115,45 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
 
         <!-- Section: About Me (Hero) -->
-        <section id="about" class="py-20 md:py-28">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
-                <div class="md:col-span-3 mb-8">
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 font-mono italic">
-                        <span class="text-green-400">$</span> <span id="typing-text"></span>
-                    </h1>
-                </div>
+        <section id="about" class="py-16 md:py-20">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-8 font-mono italic">
+                <span class="text-green-400">$</span> <span id="typing-text"></span>
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
                 <div class="md:col-span-2">
-                    <!-- This text is adapted from your SOP intro -->
+                    <!-- Updated intro text -->
                     <p class="text-lg text-gray-600 leading-relaxed space-y-4">
                         <span>
-                            I am a researcher passionate about building AI systems that are socially responsible and impactful.
+                            I'm a Master's researcher at <a href="https://en-exact-sciences.tau.ac.il/" target="_blank" class="font-medium" style="color: #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Tel Aviv University (TAU)</a>, working at the intersection of NLP, Human-Centered AI, and Computational Social Science. My work also overlaps with cultural analysis and digital humanities.
                         </span>
                         <span class="block mt-4">
-                            My research journey has been intentionally interdisciplinary, focusing on developing novel AI applications for human-centric fields like <strong>healthcare</strong>, <strong>education</strong>, and the <strong>digital humanities</strong>.
+                            I've been fortunate to have worked on long-term collaborations with inspiring mentors, including <a href="https://www.iradbengal.sites.tau.ac.il/" target="_blank" class="font-medium" style="color: #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Prof. Irad Ben-Gal</a> at <a href="https://www.lambda.sites.tau.ac.il/" target="_blank" class="font-medium" style="color: #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">LAMBDA</a>, and <a href="https://en.wikipedia.org/wiki/Nachum_Dershowitz" target="_blank" class="font-medium" style="color: #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Prof. Nachum Dershowitz</a> on the €10M ERC Synergy <a href="https://escripta.hypotheses.org/500" target="_blank" class="font-medium" style="color: #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">MiDRASH</a> project. I have also had the pleasure of working with <a href="https://www.cs.tau.ac.il/~wolf/" target="_blank" class="font-medium" style="color: #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Prof. Lior Wolf</a> on my undergraduate thesis.
                         </span>
                         <span class="block mt-4">
-                            My work centers on two main goals: (1) Leveraging the rapid growth of large-scale models to make meaningful contributions to these fields, and (2) Enhancing data-driven methods to build more representative, fair, and unbiased systems.
+                            I am also a mentor in the joint initiative between PGIMER Chandigarh and Thapar University, along with <a href="https://www.hpsingh.info/" target="_blank" class="font-medium" style="color: #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Dr. Harpreet Singh</a>, which aims to build accessible healthcare technologies for low-resource regions in India.
                         </span>
-                         <span class="block mt-4">
-                            I am actively seeking a PhD position to further this research, with a long-term goal of leading a lab dedicated to AI for social good.
+                        <span class="block mt-4">
+                            Outside of research, I enjoy deep dives into multiple interesting topics (the classic YouTube rabbit holes ;)), cooking, watching F1, and exploring new cities!
+                        </span>
+                        <span class="block mt-4">
+                            <strong>I am seeking PhD positions starting in Fall 2026</strong>, and I am excited to pursue doctoral research on robust, human centric AI in an interdisciplinary environment.
                         </span>
                     </p>
                 </div>
                 <!-- Profile Image with Social Links -->
                 <div class="flex flex-col items-center">
-                    <img class="rounded-lg shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover mb-6" 
+                    <img class="rounded-lg shadow-xl object-cover mb-6" 
+                         style="width: 12.6rem; height: 14rem; width: 16.2rem; height: 18rem;" 
                          src="./assets/images/personal_photo.jpg" 
                          alt="A professional headshot of Sharva Gogawale">
                     
                     <!-- Social Links under photo -->
                     <div class="flex gap-4 flex-wrap justify-center">
                         <!-- Email -->
-                        <a href="mailto:sharvag@mail.tau.ac.il" class="text-gray-600 hover:text-indigo-600 transition-colors" title="Email">
+                        <a href="mailto:sharvag@mail.tau.ac.il" class="text-gray-600 transition-colors" title="Email" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
@@ -166,161 +198,312 @@
             </div>
         </section>
 
+        <!-- Separator line -->
+        <div class="border-t border-gray-300 mx-auto max-w-4xl"></div>
+
         <!-- Section: Research -->
-        <section id="research" class="py-20">
-            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
-                Research
-            </h2>
-            <p class="mt-4 text-lg text-center text-gray-600 max-w-3xl mx-auto">
-                My work focuses on applying AI to human-centric domains. Below are my core research areas.
+        <section id="research" class="py-10">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 inline-block px-4 py-2 rounded-lg" style="background-color: #ffd400;">
+                    Research
+                </h2>
+            </div>
+            <p class="mt-4 text-lg text-center text-gray-600 max-w-5xl mx-auto">
+                My goal is to develop AI systems that are not just technically powerful but socially aware, trustworthy, and aligned with human intent. Specifically, I am passionate about modeling social dynamics to evaluate LMs, addressing their performance disparities across language communities, and designing AI systems that drive meaningful social impact in high-stakes domains.
             </p>
+        </section>
 
-            <!-- Research Cards Grid -->
-            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Card 1: AI in Healthcare -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="flex-shrink-0 mb-4">
-                        <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600">
-                            <!-- SVG Icon: Heart -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </span>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">AI in Healthcare</h3>
-                    <p class="text-gray-600">
-                        Developing equitable, non-invasive diagnostic tools. My work includes using diffusion models for 3D reconstruction of coronary arteries from X-rays and SAM-based segmentation for stenosis assessment.
-                    </p>
-                </div>
+        <!-- Separator line -->
+        <div class="border-t border-gray-300 mx-auto max-w-4xl"></div>
 
-                <!-- Card 2: AI in Digital Humanities -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="flex-shrink-0 mb-4">
-                        <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600">
-                            <!-- SVG Icon: Book/Scroll -->
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13.5M12 6.253a1.5 1.5 0 011.5 1.5H12a1.5 1.5 0 01-1.5-1.5H12zM12 6.253a1.5 1.5 0 001.5 1.5h-3a1.5 1.5 0 001.5-1.5zM12 6.253v-1.5c1.33 0 2.5 1.5 2.5 3H12V4.753zM12 6.253v-1.5c-1.33 0-2.5 1.5-2.5 3H12V4.753zM9.5 6.253a1.5 1.5 0 00-1.5 1.5h3a1.5 1.5 0 00-1.5-1.5zM14.5 6.253a1.5 1.5 0 011.5 1.5h-3a1.5 1.5 0 011.5-1.5z" />
-                            </svg>
-                        </span>
+        <!-- Section: Collaborations -->
+        <section id="collaborations" class="py-10">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 inline-block px-4 py-2 rounded-lg" style="background-color: #ffd400;">
+                    Collaborations
+                </h2>
+            </div>
+            <div class="mt-16 max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-start justify-items-center">
+                    
+                    <!-- CMU School of Computer Science -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg border-2 border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                            <img src="./assets/images/Collaborations/cmu_scs.png" alt="CMU School of Computer Science" class="w-16 h-16 object-contain">
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-700 text-center max-w-40 leading-relaxed">CMU School of Computer Science</h3>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">AI in Digital Humanities</h3>
-                    <p class="text-gray-600">
-                        Preserving cultural heritage with computer vision. I have developed systems for layout classification, handwriting recognition, and computational paleography for medieval Hebrew manuscripts and Dead Sea Scrolls.
-                    </p>
-                </div>
 
-                <!-- Card 3: AI in Education & Society -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="flex-shrink-0 mb-4">
-                        <span class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 text-indigo-600">
-                            <!-- SVG Icon: Users/Group -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-2.12l-1.42 1.42A3 3 0 0017 20zM7 4v1.5M7 7.5a2.5 2.5 0 010-5C8.379 2.5 9.5 3.621 9.5 5c0 1.379-1.121 2.5-2.5 2.5zM12.5 10a2.5 2.5 0 010-5C13.879 5 15 6.121 15 7.5c0 1.379-1.121 2.5-2.5 2.5zM3.5 10a2.5 2.5 0 010-5C4.879 5 6 6.121 6 7.5c0 1.379-1.121 2.5-2.5 2.5zM17 8c-1.379 0-2.5-1.121-2.5-2.5 0-1.379 1.121-2.5 2.5-2.5s2.5 1.121 2.5 2.5c0 1.379-1.121 2.5-2.5 2.5zM7 11.5c-1.657 0-3 1.343-3 3V20h6v-5.5c0-1.657-1.343-3-3-3zM12.5 12.5c-1.657 0-3 1.343-3 3V20h6v-4.5c0-1.657-1.343-3-3-3z" />
-                            </svg>
-                        </span>
+                    <!-- Thapar Institute of Engineering & Technology -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg border-2 border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                            <img src="./assets/images/Collaborations/thapar.png" alt="Thapar Institute of Engineering & Technology" class="w-16 h-16 object-contain">
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-700 text-center max-w-40 leading-relaxed">Thapar Institute of Engineering & Technology</h3>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">AI in Education & Society</h3>
-                    <p class="text-gray-600">
-                        Building systems to improve human experience. This includes real-time attentiveness tracking for e-learning and developing LLM-based agents to detect and mitigate online misinformation.
-                    </p>
+
+                    <!-- PGIMER -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg border-2 border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                            <img src="./assets/images/Collaborations/pgimer.png" alt="Post Graduate Institute of Medical Education & Research" class="w-16 h-16 object-contain">
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-700 text-center max-w-40 leading-relaxed">Post Graduate Institute of Medical Education & Research</h3>
+                    </div>
+
+                    <!-- Google Inc. -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg border-2 border-gray-100 flex items-center justify-center mb-6 group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
+                            <img src="./assets/images/Collaborations/google.png" alt="Google Inc." class="w-16 h-16 object-contain">
+                        </div>
+                        <h3 class="text-sm font-medium text-gray-700 text-center max-w-40 leading-relaxed">Google Inc.</h3>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+        <!-- Separator line -->
+        <div class="border-t border-gray-300 mx-auto max-w-4xl"></div>
 
         <!-- Section: Publications -->
-        <section id="publications" class="py-20">
-            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
-                Publications
-            </h2>
-            <div class="mt-16 max-w-3xl mx-auto">
-                <ul class="space-y-8">
-                    
-                    <!-- Publication items from your resume -->
-                    <!-- I've added a few as examples. You can continue this pattern. -->
-                    
-                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
-                        <p class="text-sm font-medium text-indigo-600">[C4] Submitted to ACL ARR</p>
-                        <h3 class="font-semibold text-lg text-gray-900 mt-1">A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement</h3>
-                        <p class="text-gray-600 mt-2 text-sm">Carmel Kronfeld, <strong>Sharva Gogawale</strong>, Ofer Weintraub, Tetsuro Kobayashi, Irad Ben Gal</p>
-                    </li>
-
-                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
-                        <p class="text-sm font-medium text-indigo-600">[C3] CHR 2025</p>
-                        <h3 class="font-semibold text-lg text-gray-900 mt-1">Classifying Medieval Manuscripts by Pen and Support</h3>
-                        <p class="text-gray-600 mt-2 text-sm"><strong>Sharva Gogawale</strong> et al.</p>
-                        <a href="#" class="text-sm font-medium text-indigo-500 hover:text-indigo-700 mt-2 inline-block">[Paper Link]</a>
-                    </li>
-                    
-                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
-                        <p class="text-sm font-medium text-indigo-600">[C2] KDIR 2025</p>
-                        <h3 class="font-semibold text-lg text-gray-900 mt-1">Real-Time Attentiveness Detection and Adaptive Feedback in Online Learning Using Facial Expression Recognition and LLMs</h3>
-                        <p class="text-gray-600 mt-2 text-sm"><strong>Sharva Gogawale</strong>, Madhura Deshpande, Parteek Kumar, Irad Ben-Gal</p>
-                        <a href="#" class="text-sm font-medium text-indigo-500 hover:text-indigo-700 mt-2 inline-block">[Paper Link]</a>
-                    </li>
-
-                    <li class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
-                        <p class="text-sm font-medium text-indigo-600">[J2] magazén 2024</p>
-                        <h3 class="font-semibold text-lg text-gray-900 mt-1">LayNet: End-to-End Layout Classification for Enhancing Image Preparation in Historical Documents</h3>
-                        <p class="text-gray-600 mt-2 text-sm"><strong>Sharva Gogawale</strong>, Berat Kurar-Barakat, Daria Vasyutinsky Shapira, Nachum Dershowitz</p>
-                        <a href="#" class="text-sm font-medium text-indigo-500 hover:text-indigo-700 mt-2 inline-block">[Paper Link]</a>
-                    </li>
-                    
-                    <!-- Add remaining publications here -->
-
-                </ul>
+        <section id="publications" class="py-10">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 inline-block px-4 py-2 rounded-lg" style="background-color: #ffd400;">
+                    Publications
+                </h2>
             </div>
-        </section>
-
-        <!-- Section: News and Updates -->
-        <section id="news" class="py-20">
-            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
-                News & Updates
-            </h2>
-            <div class="mt-16 max-w-4xl mx-auto">
-                <div class="space-y-8">
+            <div class="mt-16 max-w-5xl mx-auto">
+                <div class="space-y-12">
                     
-                    <!-- News Item 1 -->
-                    <div class="border-l-4 border-indigo-500 pl-6 py-4">
-                        <div class="flex items-center gap-4 mb-2">
-                            <span class="text-sm font-medium text-indigo-600">November 2025</span>
-                            <span class="w-2 h-2 bg-indigo-500 rounded-full"></span>
+                    <!-- Publication 1 -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <!-- Paper Image -->
+                        <div class="flex-shrink-0 w-full md:w-48">
+                            <img src="./assets/images/Papers/CN.png" alt="Counter-Narrative Generation Framework" class="w-full h-32 md:h-36 object-contain rounded-lg border border-gray-200 bg-gray-50 p-2">
                         </div>
-                        <h3 class="font-semibold text-lg text-gray-900 mb-2">Paper Submitted to ACL ARR</h3>
-                        <p class="text-gray-600">Our work on "A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement" has been submitted to ACL ARR.</p>
+                        <!-- Paper Details -->
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement</h3>
+                            <p class="text-gray-700 mb-2">
+                                <span class="underline">Carmel Kronfeld</span>, <strong>Sharva Gogawale</strong>, Ofer Weintraub, Tetsuro Kobayashi, Irad Ben Gal
+                            </p>
+                            <p class="text-gray-600 italic mb-3">Submitted to ACL ARR</p>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <a href="#" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[Paper]</a>
+                            </div>
+                            <div class="text-sm">
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Computational Social Science</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- News Item 2 -->
-                    <div class="border-l-4 border-green-500 pl-6 py-4">
-                        <div class="flex items-center gap-4 mb-2">
-                            <span class="text-sm font-medium text-green-600">October 2025</span>
-                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <!-- Publication 2 -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <!-- Paper Image -->
+                        <div class="flex-shrink-0 w-full md:w-48">
+                            <img src="./assets/images/Papers/QvsC.png" alt="Medieval Manuscripts Classification" class="w-full h-32 md:h-36 object-contain rounded-lg border border-gray-200 bg-gray-50 p-2">
                         </div>
-                        <h3 class="font-semibold text-lg text-gray-900 mb-2">Papers Accepted at CHR 2025 and KDIR 2025</h3>
-                        <p class="text-gray-600">Excited to share that two papers have been accepted for publication at CHR 2025 and KDIR 2025 conferences.</p>
+                        <!-- Paper Details -->
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Classifying Medieval Manuscripts by Pen and Support</h3>
+                            <p class="text-gray-700 mb-2">
+                                <strong>Sharva Gogawale</strong>, Omer Ventura, Daria Vasyutinsky-Shapira, Berat Kurar-Barakat, Gal Grudka, Mohammad Suliman, Iddo Hakim, Nachum Dershowitz
+                            </p>
+                            <p class="text-gray-600 italic mb-3">Anthology of Computers and the Humanities, 2025</p>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <a href="https://anthology.ach.org/volumes/vol0003/classifying-medieval-manuscripts-by-pen-support/" target="_blank" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[Paper]</a>
+                                <a href="https://github.com/TAU-CH/midrash_support_and_implement_classification" target="_blank" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[Code]</a>
+                                <button onclick="toggleBibTeX('medieval-bibtex')" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s; background: none; cursor: pointer;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[BibTeX]</button>
+                            </div>
+                            <div id="medieval-bibtex" class="hidden mt-3 p-3 bg-gray-100 rounded text-sm font-mono text-gray-700 whitespace-pre-wrap">@article{10.63744@tL5xGcaScd42,
+  title = {Classifying Medieval Manuscripts by Pen and Support},
+  author = {Sharva Gogawale and Omer Ventura and Daria \{Vasyutinsky-Shapira\} and Berat \{Kurar-Barakat\} and Gal Grudka and Mohammad Suliman and Iddo Hakim and Nachum Dershowitz},
+  year = {2025},
+  journal = {Anthology of Computers and the Humanities},
+  volume = {3},
+  pages = {1349--1359},
+  editor = {Taylor Arnold, Margherita Fantoli, and Ruben Ros},
+  doi = {10.63744/tL5xGcaScd42}
+}</div>
+                            <div class="text-sm">
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">Digital Humanities</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- News Item 3 -->
-                    <div class="border-l-4 border-blue-500 pl-6 py-4">
-                        <div class="flex items-center gap-4 mb-2">
-                            <span class="text-sm font-medium text-blue-600">September 2024</span>
-                            <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    <!-- Publication 3 -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <!-- Paper Image -->
+                        <div class="flex-shrink-0 w-full md:w-48">
+                            <img src="./assets/images/Papers/KDIR.png" alt="Attentiveness Detection" class="w-full h-32 md:h-36 object-contain rounded-lg border border-gray-200 bg-gray-50 p-2">
                         </div>
-                        <h3 class="font-semibold text-lg text-gray-900 mb-2">Publication in magazén Journal</h3>
-                        <p class="text-gray-600">Our paper "LayNet: End-to-End Layout Classification for Enhancing Image Preparation in Historical Documents" has been published in magazén.</p>
+                        <!-- Paper Details -->
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Real-Time Attentiveness Detection and Adaptive Feedback in Online Learning Using Facial Expression Recognition and LLMs</h3>
+                            <p class="text-gray-700 mb-2">
+                                <strong>Sharva Gogawale</strong>, Madhura Deshpande, Parteek Kumar, Irad Ben-Gal
+                            </p>
+                            <p class="text-gray-600 italic mb-3">KDIR 2025</p>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <a href="https://drive.google.com/file/d/1b_HGEdU3wSaRsrw8NkE-EOet99lgxYS7/view" target="_blank" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[Paper]</a>
+                            </div>
+                            <div class="text-sm">
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">AI in Education</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Add more news items as needed -->
+                    <!-- Publication 4 -->
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <!-- Paper Image -->
+                        <div class="flex-shrink-0 w-full md:w-48">
+                            <img src="./assets/images/Papers/Netlay.png" alt="LayNet" class="w-full h-32 md:h-36 object-contain rounded-lg border border-gray-200 bg-gray-50 p-2">
+                        </div>
+                        <!-- Paper Details -->
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">NetLay: Layout Classification Dataset for Enhancing Layout Analysis</h3>
+                            <p class="text-gray-700 mb-2">
+                                <strong>Sharva Gogawale</strong>, Luigi Bambaci, Berat Kurar-Barakat, Daria Vasyutinsky Shapira, Daniel Stökl Ben Ezra, Nachum Dershowitz
+                            </p>
+                            <p class="text-gray-600 italic mb-3">magazén: International Journal for Digital and Public Humanities, 2024</p>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <a href="https://edizionicafoscari.unive.it/en/edizioni4/riviste/magazen/2024/2/netlay-layout-classification-dataset-for-enhancing/" target="_blank" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[Paper]</a>
+                                <a href="https://github.com/TAU-CH/midrash_layout_classification_using_multilabel_vgg" target="_blank" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[Code]</a>
+                                <button onclick="toggleBibTeX('netlay-bibtex')" class="text-sm px-2 py-1 rounded" style="color: #70A7C2; border: 1px solid #70A7C2; transition: opacity 0.3s; background: none; cursor: pointer;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">[BibTeX]</button>
+                            </div>
+                            <div id="netlay-bibtex" class="hidden mt-3 p-3 bg-gray-100 rounded text-sm font-mono text-gray-700 whitespace-pre-wrap">@article{gogawale2024netlay,
+  title = {NetLay: End-to-End Layout Classification for Enhancing Layout Analysis},
+  author = {Sharva Gogawale and Luigi Bambaci and Berat Kurar-Barakat and Daria Vasyutinsky Shapira and Daniel St{\"o}kl Ben Ezra and Nachum Dershowitz},
+  journal = {magazén: International Journal for Digital and Public Humanities},
+  volume = {5},
+  number = {2},
+  pages = {1--14},
+  month = {December},
+  year = {2024}
+}</div>
+                            <div class="text-sm">
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">Digital Humanities</span>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </section>
 
+        <!-- Separator line -->
+        <div class="border-t border-gray-300 mx-auto max-w-4xl"></div>
+
+        <!-- Section: News and Updates -->
+        <section id="news" class="py-10">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 inline-block px-4 py-2 rounded-lg" style="background-color: #ffd400;">
+                    News & Updates
+                </h2>
+            </div>
+            <div class="mt-16 max-w-4xl mx-auto">
+                <!-- Dotted border container -->
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 bg-gray-50/30">
+                    <div class="space-y-8">
+                        
+                        <!-- Always visible news items (first 5) -->
+                        <div id="initial-news" class="space-y-6">
+                            <!-- News Item 1 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ December 2025: Successfully defended my M.Sc. thesis at Tel Aviv University.</p>
+                            </div>
+
+                            <!-- News Item 2 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ November 2025: Started a collaboration with the Living Edge Lab, School of Computer Science, CMU, working on learning efficient representations to improve lightweight video models under tight FLOP and memory budgets.</p>
+                            </div>
+
+                            <!-- News Item 3 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ October 2025: Our work on a multi-stage, LLM-driven agentic framework for counter-narratives against illiberal propaganda was submitted to ACL ARR.</p>
+                            </div>
+
+                            <!-- News Item 4 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ September 2025: Our work on classifying medieval manuscripts was accepted to CHR 2025.</p>
+                            </div>
+
+                            <!-- News Item 5 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ July 2025: Our paper on real-time attentiveness detection and adaptive feedback in online learning was accepted to KDIR 2025.</p>
+                            </div>
+                        </div>
+
+                        <!-- Additional news items (hidden by default) -->
+                        <div id="additional-news" class="hidden space-y-6">
+                            <!-- News Item 6 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ April 2025: Started working on the TAU–Stanford Digital Living project, focusing on privacy-preserving, real-world AI systems.</p>
+                            </div>
+
+                            <!-- News Item 7 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ December 2024: Presented our work at CHR 2024 in Aarhus, Denmark.</p>
+                            </div>
+
+                            <!-- News Item 8 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ September 2024: Our work on clustering medieval Hebrew manuscripts to study script provenance and paleographic patterns was accepted to CHR 2024.</p>
+                            </div>
+
+                            <!-- News Item 9 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ September 2024: Presented our work on the MiDRASH project at GCH 2024 in Darmstadt, Germany.</p>
+                            </div>
+
+                            <!-- News Item 10 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ September 2024: Our work on historical document layout analysis was accepted to magazén: International Journal for Digital and Public Humanities.</p>
+                            </div>
+
+                            <!-- News Item 11 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ February 2023: Our work on judicial authorship identification received a research grant of $30,000.</p>
+                            </div>
+
+                            <!-- News Item 12 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ July 2022: Semifinalist, Annual Startup Competition 2022, Tel Aviv University – recognized as a Top 10 Tech Track startup in Israel out of 116 participating ventures.</p>
+                            </div>
+
+                            <!-- News Item 13 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ March 2022: First Place, Spring 2022 International Startup Hackathon (Coller School of Management & Rutgers University, New Jersey) – initiated an EdTech startup.</p>
+                            </div>
+
+                            <!-- News Item 14 -->
+                            <div class="py-2">
+                                <p class="text-gray-700">✦ August 2021: Started working on a TAU–Google AI for Social Good project on the digitization of the Dead Sea Scrolls.</p>
+                            </div>
+                        </div>
+
+                        <!-- Show More/Less Button -->
+                        <div class="text-center pt-6">
+                            <button onclick="toggleNews()" id="news-toggle-btn" class="px-4 py-2 text-sm rounded-md font-medium transition-all duration-300" style="color: #70A7C2; border: 1px solid #70A7C2; background: white;" onmouseover="this.style.backgroundColor='#70A7C2'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='#70A7C2';">
+                                Show More
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator line -->
+        <div class="border-t border-gray-300 mx-auto max-w-4xl"></div>
+
         <!-- Section: Contact Me -->
-        <section id="contact" class="py-20">
-            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-900 sm:text-4xl">
-                Contact Me
-            </h2>
+        <section id="contact" class="py-10">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 inline-block px-4 py-2 rounded-lg" style="background-color: #ffd400;">
+                    Contact Me
+                </h2>
+            </div>
             <div class="mt-16 max-w-4xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     
@@ -328,7 +511,7 @@
                     <div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
                         <p class="text-gray-600 mb-8">
-                            I'm always interested in discussing research collaborations, PhD opportunities, or potential projects in AI for social good. Feel free to reach out!
+                            I am always on the lookout for exciting collaborations or discussions - Please feel free to reach out 😀
                         </p>
                         
                         <div class="space-y-4">
@@ -336,7 +519,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                <a href="mailto:sharvag@mail.tau.ac.il" class="text-gray-900 hover:text-indigo-600">sharvag@mail.tau.ac.il</a>
+                                <a href="mailto:sharvag@mail.tau.ac.il" class="text-gray-900" style="transition: color 0.3s;" onmouseover="this.style.color='#70A7C2'" onmouseout="this.style.color=''">sharvag@mail.tau.ac.il</a>
                             </div>
                             
                             <div class="flex items-center gap-3">
@@ -358,24 +541,17 @@
 
                     <!-- Quick Contact Form or Additional Info -->
                     <div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-6">Research Interests</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-6">Collaboration Areas</h3>
                         <div class="space-y-4">
                             <div class="bg-gray-50 p-4 rounded-lg">
-                                <h4 class="font-medium text-gray-900 mb-2">Collaboration Areas</h4>
                                 <ul class="text-gray-600 space-y-1">
+                                    <li>• Computational Social Science</li>
+                                    <li>• Social NLP</li>
                                     <li>• AI in Healthcare & Medical Imaging</li>
                                     <li>• Digital Humanities & Cultural Heritage</li>
-                                    <li>• Educational Technology & E-learning</li>
-                                    <li>• Computer Vision & NLP Applications</li>
-                                    <li>• Bias Detection & Fair AI Systems</li>
+                                    <li>• AI in Education</li>
+                                    <li>• Trustworthy AI</li>
                                 </ul>
-                            </div>
-                            
-                            <div class="bg-indigo-50 p-4 rounded-lg">
-                                <h4 class="font-medium text-gray-900 mb-2">Current Focus</h4>
-                                <p class="text-gray-600">
-                                    Actively seeking PhD opportunities in AI research with a focus on social good and human-centric applications.
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -441,7 +617,70 @@
         // Start typing animation when page loads
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(typeWriter, 500); // Start after 500ms delay
+            
+            // Check for saved theme preference or default to light mode
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                toggleIcons(true);
+            }
         });
+
+        // Function to toggle BibTeX visibility
+        function toggleBibTeX(id) {
+            const element = document.getElementById(id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+            } else {
+                element.classList.add('hidden');
+            }
+        }
+
+        // Function to toggle news visibility
+        function toggleNews() {
+            const additionalNews = document.getElementById('additional-news');
+            const toggleBtn = document.getElementById('news-toggle-btn');
+            
+            if (additionalNews.classList.contains('hidden')) {
+                additionalNews.classList.remove('hidden');
+                toggleBtn.textContent = 'Show Less';
+            } else {
+                additionalNews.classList.add('hidden');
+                toggleBtn.textContent = 'Show More';
+            }
+        }
+
+        // Function to toggle night mode
+        function toggleNightMode() {
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark');
+            
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                toggleIcons(false);
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                toggleIcons(true);
+            }
+        }
+
+        // Function to toggle sun/moon icons
+        function toggleIcons(isDark) {
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            
+            if (isDark) {
+                // In dark mode, show sun icon (to switch back to light)
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+            } else {
+                // In light mode, show moon icon (to switch to dark)
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
     </script>
 
 </body>
