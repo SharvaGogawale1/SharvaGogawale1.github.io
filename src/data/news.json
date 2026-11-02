@@ -1,0 +1,122 @@
+{
+  "highlights": [
+    {
+      "date": "2026-10-01",
+      "text": "Submitted our paper on selecting supervision for figurative language detection to ACL ARR.",
+      "paperLinks": {
+        "selecting supervision for figurative language detection": "The Usual Positives: Selecting Supervision for Figurative Language Detection"
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "text": "Submitted our paper on figure-of-speech-aware deception detection to ACL ARR.",
+      "paperLinks": {
+        "figure-of-speech-aware deception detection": "Beyond Literal Meaning: Figure-of-Speech-Aware Deception Detection"
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "text": "Submitted our paper auditing gendered name sensitivity in LLM-based candidate screening to ACL ARR.",
+      "paperLinks": {
+        "auditing gendered name sensitivity in LLM-based candidate screening": "Auditing Gendered Name Sensitivity in LLM-Based Candidate Screening"
+      }
+    },
+    {
+      "date": "2026-08-01",
+      "text": "Our paper on multi-stage agentic counter-narrative generation was accepted to INLG 2026.",
+      "paperLinks": {
+        "multi-stage agentic counter-narrative generation": "A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement"
+      }
+    },
+    {
+      "date": "2026-06-01",
+      "text": "Our work was accepted for an oral talk at CVPR 2026 in Denver."
+    },
+    {
+      "date": "2026-05-01",
+      "text": "Our paper on complex layout classification in the wild was accepted to the ICDAR main conference as an oral presentation.",
+      "paperLinks": {
+        "complex layout classification in the wild": "Complex Layout Classification in the Wild: A Low-Resource Approach with Layout-Preserving Augmentations"
+      }
+    },
+    {
+      "date": "2026-05-01",
+      "text": "Our paper on reading order inference for complex document layouts was accepted to DAS 2026, co-located with ICDAR in Vienna.",
+      "paperLinks": {
+        "reading order inference for complex document layouts": "Reading Order Inference for Complex Document Layouts"
+      }
+    },
+    {
+      "date": "2025-12-01",
+      "text": "Successfully defended my M.Sc. thesis at Tel Aviv University."
+    },
+    {
+      "date": "2025-11-01",
+      "text": "Initiated a collaboration with CMU's Living Edge Lab, working on learning efficient representations to improve lightweight video models for accessible deployment on edge devices."
+    },
+    {
+      "date": "2025-10-01",
+      "text": "Submitted our paper on Agentic Simulation for Misinformation—a multi-stage framework for generating robust counter-narratives—to ACL ARR.",
+      "paperLinks": {
+        "Agentic Simulation for Misinformation": "A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement"
+      }
+    },
+    {
+      "date": "2025-09-01",
+      "text": "Our work on classifying medieval manuscripts was accepted to CHR 2025.",
+      "paperLinks": {
+        "classifying medieval manuscripts": "Classifying Medieval Manuscripts by Pen and Support"
+      }
+    },
+    {
+      "date": "2025-08-01",
+      "text": "Started working on structural alignment in morphologically rich languages, developing frameworks to decouple grammatical constraints from sociological bias."
+    },
+    {
+      "date": "2025-07-01",
+      "text": "Our paper on real-time attentiveness detection and adaptive feedback in online learning was accepted to KDIR 2025.",
+      "paperLinks": {
+        "real-time attentiveness detection and adaptive feedback in online learning": "Real-Time Attentiveness Detection and Adaptive Feedback in Online Learning Using Facial Expression Recognition and LLMs"
+      }
+    },
+    {
+      "date": "2025-04-01",
+      "text": "Started working on the TAU–Stanford Digital Living project, focusing on privacy-preserving, real-world AI systems."
+    },
+    {
+      "date": "2024-12-01",
+      "text": "Presented our work at CHR 2024 in Aarhus, Denmark."
+    },
+    {
+      "date": "2024-09-01",
+      "text": "Our work on clustering medieval Hebrew manuscripts to study script provenance and paleographic patterns was accepted to CHR 2024."
+    },
+    {
+      "date": "2024-09-01",
+      "text": "Presented our work on the MiDRASH project at GCH 2024 in Darmstadt, Germany."
+    },
+    {
+      "date": "2024-09-01",
+      "text": "Our work on historical document layout analysis was accepted to magazén: International Journal for Digital and Public Humanities.",
+      "paperLinks": {
+        "historical document layout analysis": "NetLay: Layout Classification Dataset for Enhancing Layout Analysis"
+      }
+    },
+    {
+      "date": "2023-02-01",
+      "text": "Our work on judicial authorship identification received a research grant of $30,000."
+    },
+    {
+      "date": "2022-07-01",
+      "text": "Semifinalist, Annual Startup Competition 2022, Tel Aviv University – recognized as a Top 10 Tech Track startup in Israel out of 116 participating ventures."
+    },
+    {
+      "date": "2022-03-01",
+      "text": "First Place, Spring 2022 International Startup Hackathon (Coller School of Management & Rutgers University, New Jersey) – initiated an EdTech startup."
+    },
+    {
+      "date": "2021-08-01",
+      "text": "Started working on a TAU–Google AI for Social Good project on the digitization of the Dead Sea Scrolls."
+    }
+  ]
+}

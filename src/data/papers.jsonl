@@ -1,0 +1,226 @@
+{
+  "title": "Beyond the Word We See: Supervising Unobserved Alternatives in Language Models",
+  "authors": [
+    "Sharva Gogawale",
+    "Chen Shani"
+  ],
+  "venue": "In preparation",
+  "links": {
+    "pdf": "",
+    "code": ""
+  },
+  "rqs": [
+    "Computational Social Science & NLP"
+  ],
+  "selected": true
+}
+
+{
+  "title": "The Usual Positives: Selecting Supervision for Figurative Language Detection",
+  "authors": [
+    "Sharva Gogawale",
+    "Amutheezan Sivagnanam",
+    "Nachum Dershowitz",
+    "Rakesh M Verma"
+  ],
+  "venue": "ACL ARR October 2026 Submission",
+  "links": {
+    "pdf": "",
+    "code": ""
+  },
+  "rqs": [
+    "Computational Social Science & NLP"
+  ],
+  "selected": true
+}
+
+{
+  "title": "Beyond Literal Meaning: Figure-of-Speech-Aware Deception Detection",
+  "authors": [
+    "Amutheezan Sivagnanam",
+    "Sharva Gogawale",
+    "Rakesh M Verma"
+  ],
+  "venue": "ACL ARR August 2026 Submission",
+  "links": {
+    "pdf": "",
+    "code": ""
+  },
+  "rqs": [
+    "Computational Social Science & NLP"
+  ],
+  "selected": true
+}
+
+{
+  "title": "Auditing Gendered Name Sensitivity in LLM-Based Candidate Screening",
+  "authors": [
+    "Sharva Gogawale",
+    "Hila Chalutz-BenGal"
+  ],
+  "venue": "ACL ARR August 2026 Submission",
+  "links": {
+    "pdf": "",
+    "code": ""
+  },
+  "rqs": [
+    "Computational Social Science & NLP"
+  ],
+  "selected": true
+}
+
+{
+  "title": "Complex Layout Classification in the Wild: A Low-Resource Approach with Layout-Preserving Augmentations",
+  "authors": [
+    "Sharva Gogawale",
+    "Iddo Hakim",
+    "Gal Grudka",
+    "Mohammad Suliman",
+    "Omer Ventura",
+    "Daria Vasyutinsky-Shapira",
+    "Berat Kurar-Barakat",
+    "Nachum Dershowitz"
+  ],
+  "venue": "International Conference on Document Analysis and Recognition (ICDAR)",
+  "year": 2027,
+  "links": {
+    "pdf": "",
+    "code": ""
+  },
+  "rqs": [
+    "Computational Humanities"
+  ],
+  "selected": true
+}
+
+{
+  "title": "Reading Order Inference for Complex Document Layouts",
+  "authors": [
+    "Iddo Hakim",
+    "Sharva Gogawale",
+    "Omer Ventura",
+    "Gal Grudka",
+    "Daria Vasyutinsky-Shapira",
+    "Berat Kurar-Barakat",
+    "Nachum Dershowitz"
+  ],
+  "venue": "17th IAPR International Workshop on Document Analysis Systems (DAS)",
+  "year": 2026,
+  "awards": "Best Paper Runner-up",
+  "links": {
+    "pdf": "",
+    "code": ""
+  },
+  "rqs": [
+    "Computational Humanities"
+  ],
+  "selected": true
+}
+
+{
+  "title": "A Multi-Stage Agentic Framework for Effective Counter-Narrative Generation and Refinement",
+  "authors": [
+    "Carmel Kronfeld",
+    "Sharva Gogawale",
+    "Tetsuro Kobayashi",
+    "Irad Ben-Gal"
+  ],
+  "venue": "19th International Conference on Natural Language Generation (INLG)",
+  "year": 2026,
+  "links": {
+    "pdf": "",
+    "code": ""
+  },
+  "rqs": [
+    "Computational Social Science & NLP"
+  ],
+  "selected": true
+}
+
+{
+  "title": "Classifying Medieval Manuscripts by Pen and Support",
+  "authors": [
+    "Sharva Gogawale",
+    "Omer Ventura",
+    "Daria Vasyutinsky-Shapira",
+    "Berat Kurar-Barakat",
+    "Gal Grudka",
+    "Mohammad Suliman",
+    "Iddo Hakim",
+    "Nachum Dershowitz"
+  ],
+  "venue": "Anthology of Computers and the Humanities",
+  "year": 2025,
+  "links": {
+    "pdf": "https://anthology.ach.org/volumes/vol0003/classifying-medieval-manuscripts-by-pen-support/",
+    "code": "https://github.com/TAU-CH/midrash_support_and_implement_classification"
+  },
+  "bibtex": "@article{10.63744@tL5xGcaScd42,\n  title = {Classifying Medieval Manuscripts by Pen and Support},\n  author = {Sharva Gogawale and Omer Ventura and Daria \\{Vasyutinsky-Shapira\\} and Berat \\{Kurar-Barakat\\} and Gal Grudka and Mohammad Suliman and Iddo Hakim and Nachum Dershowitz},\n  year = {2025},\n  journal = {Anthology of Computers and the Humanities},\n  volume = {3},\n  pages = {1349--1359},\n  editor = {Taylor Arnold, Margherita Fantoli, and Ruben Ros},\n  doi = {10.63744/tL5xGcaScd42}\n}",
+  "rqs": [
+    "Computational Humanities"
+  ],
+  "selected": true
+}
+
+{
+  "title": "Real-Time Attentiveness Detection and Adaptive Feedback in Online Learning Using Facial Expression Recognition and LLMs",
+  "authors": [
+    "Sharva Gogawale",
+    "Madhura Deshpande",
+    "Parteek Kumar",
+    "Irad Ben-Gal"
+  ],
+  "venue": "KDIR",
+  "year": 2025,
+  "links": {
+    "pdf": "https://drive.google.com/file/d/1b_HGEdU3wSaRsrw8NkE-EOet99lgxYS7/view",
+    "code": ""
+  },
+  "rqs": [
+    "AI in Education"
+  ],
+  "selected": true
+}
+
+{
+  "title": "Learner attentiveness and engagement analysis in online education using computer vision",
+  "authors": [
+    "Sharva Gogawale",
+    "Madhura Deshpande",
+    "Parteek Kumar",
+    "Irad Ben-Gal"
+  ],
+  "venue": "Multimedia Tools and Applications",
+  "year": 2024,
+  "links": {
+    "pdf": "https://link.springer.com/article/10.1007/s11042-026-21884-5",
+    "code": ""
+  },
+  "rqs": [
+    "AI in Education"
+  ],
+  "selected": true
+}
+
+{
+  "title": "NetLay: Layout Classification Dataset for Enhancing Layout Analysis",
+  "authors": [
+    "Sharva Gogawale",
+    "Luigi Bambaci",
+    "Berat Kurar-Barakat",
+    "Daria Vasyutinsky Shapira",
+    "Daniel Stökl Ben Ezra",
+    "Nachum Dershowitz"
+  ],
+  "venue": "magazén: International Journal for Digital and Public Humanities",
+  "year": 2024,
+  "links": {
+    "pdf": "https://edizionicafoscari.unive.it/en/edizioni4/riviste/magazen/2024/2/netlay-layout-classification-dataset-for-enhancing/",
+    "code": "https://github.com/TAU-CH/midrash_layout_classification_using_multilabel_vgg"
+  },
+  "bibtex": "@article{gogawale2024netlay,\n  title = {NetLay: End-to-End Layout Classification for Enhancing Layout Analysis},\n  author = {Sharva Gogawale and Luigi Bambaci and Berat Kurar-Barakat and Daria Vasyutinsky Shapira and Daniel St{\\\"o}kl Ben Ezra and Nachum Dershowitz},\n  journal = {magazén: International Journal for Digital and Public Humanities},\n  volume = {5},\n  number = {2},\n  pages = {1--14},\n  month = {December},\n  year = {2024}\n}",
+  "rqs": [
+    "Computational Humanities"
+  ],
+  "selected": true
+}

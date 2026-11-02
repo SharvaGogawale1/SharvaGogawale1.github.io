@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  /* Clear the sticky SiteNav when jumping to #anchors / scrollIntoView */
+  scroll-padding-top: 4.5rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--theme-bg-primary, #fbfaf7);
+  }
+}
+
+/* Theme CSS Variables */
+:root {
+  --theme-bg-primary: #fbfaf7;
+  --theme-bg-secondary: #fefdfb;
+  --theme-text-primary: #111827;
+  --theme-text-secondary: #6b7280;
+  --theme-border: #ebe8e1;
+  --theme-accent: #A02040;
+  /* Fine paper fibre */
+  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  /* Slight crumple: ridged noise lit as a relief map, flattened toward white */
+  --paper-crumple: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.0035' numOctaves='4' seed='11' stitchTiles='stitch'/%3E%3CfeDiffuseLighting surfaceScale='10' lighting-color='%23fff'%3E%3CfeDistantLight azimuth='225' elevation='45'/%3E%3C/feDiffuseLighting%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.15' intercept='0.187'/%3E%3CfeFuncG type='linear' slope='1.15' intercept='0.187'/%3E%3CfeFuncB type='linear' slope='1.15' intercept='0.187'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23c%29' opacity='0.32'/%3E%3C/svg%3E");
+}
+
+/* Paper texture (light mode only): faint crumple + fine grain.
+   .paper-grain repeats it on surfaces that paint their own background (the sticky nav);
+   the crumple is viewport-fixed so it lines up across both. */
+.app-container,
+.paper-grain {
+  background-image: var(--paper-crumple), var(--paper-grain);
+  background-attachment: fixed, scroll;
+}
+.dark .app-container,
+.dark .paper-grain {
+  background-image: none;
+}
+
+.dark {
+  --theme-bg-primary: #111827;
+  --theme-bg-secondary: #1f2937;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #9ca3af;
+  --theme-border: #374151;
+  --theme-accent: #e11d2e;
+}
+
+/* Scrollbars */
+html, body, * {
+  scrollbar-width: thin;
+  scrollbar-color: #A02040 #ebe8e1;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fbfaf7;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #A02040;
+  border-radius: 6px;
+  border: 2px solid #fbfaf7;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #e11d2e;
+}
+
+.dark * {
+  scrollbar-color: #e11d2e #374151;
+}
+
+.dark *::-webkit-scrollbar-track {
+  background: #111827;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: #e11d2e;
+  border: 2px solid #111827;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: #ff3d51;
+}
+
+/* Offset section targets so titles sit below the sticky header */
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+/* Dotted underline for org marks — radial dots avoid overlapping border-dotted artifacts */
+.org-mark-name {
+  position: relative;
+  display: inline;
+}
+.org-mark-name::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2em;
+  height: 2.5px;
+  background-image: radial-gradient(circle, rgb(193 18 31 / 0.5) 0.85px, transparent 1px);
+  background-size: 5px 2.5px;
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  pointer-events: none;
+  transition: background-image 0.2s ease;
+}
+.dark .org-mark-name::after {
+  background-image: radial-gradient(circle, rgb(255 107 122 / 0.55) 0.85px, transparent 1px);
+}
+button:hover .org-mark-name::after,
+button[aria-expanded="true"] .org-mark-name::after {
+  background-image: radial-gradient(circle, rgb(193 18 31 / 0.9) 0.85px, transparent 1px);
+}
+.dark button:hover .org-mark-name::after,
+.dark button[aria-expanded="true"] .org-mark-name::after {
+  background-image: radial-gradient(circle, rgb(255 107 122 / 0.9) 0.85px, transparent 1px);
+}
+
+.paper-card {
+  position: relative;
+  overflow: visible;
+  touch-action: manipulation; /* Reduce tap delay on touch devices */
+}
+
+/* Disable hover effects on touch devices, where scroll/tap can trigger sticky hover */
+@media (hover: none) {
+  [class*="hover:text-gray"]:hover,
+  [class*="hover:text-brand"]:hover,
+  [class*="hover:text-white"]:hover {
+    color: unset !important;
+  }
+
+  [class*="hover:underline"]:hover {
+    text-decoration: unset !important;
+  }
+
+  .paper-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ---------- Hand-drawn touches ---------- */
+
+:root {
+  --yap-ink: #5f5a52;
+  --doodle-ink: #8d877d;
+}
+.dark {
+  --yap-ink: #c9c4bc;
+  --doodle-ink: #6b7280;
+}
+
+/* Squiggly underline for section headings */
+.hand-underline {
+  padding-bottom: 0.35rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 Q20 1.5 40 5 T80 4.5 T120 5 T158 4' fill='none' stroke='%23c1121f' stroke-opacity='0.55' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat left bottom / 100% 8px;
+}
+.dark .hand-underline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 Q20 1.5 40 5 T80 4.5 T120 5 T158 4' fill='none' stroke='%23ff6b7a' stroke-opacity='0.6' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Highlighter-pen marking */
+.hand-highlight {
+  color: inherit;
+  padding: 0.05em 0.3em;
+  margin: 0 -0.15em;
+  border-radius: 0.7em 0.25em 0.8em 0.3em;
+  background: linear-gradient(100deg,
+    rgb(255 220 90 / 0) 0.5%, rgb(255 220 90 / 0.6) 2%,
+    rgb(255 220 90 / 0.4) 50%, rgb(255 220 90 / 0.6) 97%, rgb(255 220 90 / 0) 99.5%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.dark .hand-highlight {
+  background: linear-gradient(100deg,
+    rgb(250 204 21 / 0) 0.5%, rgb(250 204 21 / 0.25) 2%,
+    rgb(250 204 21 / 0.16) 50%, rgb(250 204 21 / 0.25) 97%, rgb(250 204 21 / 0) 99.5%);
+}
+
+/* Margin doodles (positioned in the gutters either side of the 56rem content column) */
+.margin-doodle {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--doodle-ink);
+  opacity: 0.75;
+}
+.margin-doodle svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: url(#doodle-sketch);
+}
+.margin-doodle--left {
+  left: calc((100% - 56rem) / 4);
+  transform: translateX(-50%) rotate(var(--doodle-rotate));
+}
+.margin-doodle--right {
+  right: calc((100% - 56rem) / 4);
+  transform: translateX(50%) rotate(var(--doodle-rotate));
+}
+
+/* Yapping machines */
+.yap-screen { fill: rgb(160 32 64 / 0.05); }
+.dark .yap-screen { fill: rgb(255 107 122 / 0.07); }
+.yap-cheek { fill: rgb(225 29 46 / 0.18); }
+
+.yap-mouth {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: yap-mouth 0.2s ease-in-out infinite alternate;
+}
+@keyframes yap-mouth {
+  from { transform: scaleY(0.25); }
+  to { transform: scaleY(1); }
+}
+
+.yap-eyes ellipse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: yap-blink 4.6s infinite;
+}
+.yap-machine:last-child .yap-eyes ellipse { animation-delay: 1.9s; }
+@keyframes yap-blink {
+  0%, 93%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.yap-waves path { animation: yap-wave 0.5s ease-in-out infinite alternate; }
+.yap-waves path + path { animation-delay: 0.25s; }
+@keyframes yap-wave {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+.yap-bubble {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.25rem 0.75rem 0.3rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: var(--theme-text-primary);
+  background: var(--theme-bg-secondary);
+  border: 1.5px solid var(--yap-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  animation: yap-pop 0.25s ease-out;
+}
+/* Tail: outer (ink) + inner (fill) triangles */
+.yap-bubble::before,
+.yap-bubble::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: transparent;
+}
+.yap-bubble::before {
+  bottom: -10px;
+  border-width: 10px 7px 0;
+  border-top-color: var(--yap-ink);
+}
+.yap-bubble::after {
+  bottom: -7px;
+  border-width: 8px 5px 0;
+  border-top-color: var(--theme-bg-secondary);
+}
+.yap-bubble--left::before { left: 16px; transform: skewX(35deg); }
+.yap-bubble--left::after { left: 18px; transform: skewX(35deg); }
+.yap-bubble--right::before { right: 16px; transform: skewX(-35deg); }
+.yap-bubble--right::after { right: 18px; transform: skewX(-35deg); }
+@keyframes yap-pop {
+  from { opacity: 0; transform: translateY(4px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+.yap-caret {
+  margin-left: 1px;
+  opacity: 0.6;
+  animation: yap-caret 0.8s steps(1) infinite;
+}
+@keyframes yap-caret {
+  50% { opacity: 0; }
+}
+
+/* Token lane at mouth height between the two machines */
+.yap-lane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 19px;
+  height: 22px;
+}
+@media (min-width: 640px) {
+  .yap-lane { bottom: 29px; }
+}
+.yap-lane::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1.5px dashed var(--yap-ink);
+  opacity: 0.3;
+}
+.yap-token {
+  position: absolute;
+  top: 1px;
+  height: 20px;
+  padding: 0 0.4rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  line-height: 18px;
+  white-space: nowrap;
+  color: var(--theme-text-primary);
+  background: var(--theme-bg-secondary);
+  border: 1.2px solid var(--yap-ink);
+  border-radius: 12px 4px 10px 5px / 5px 10px 4px 12px;
+}
+.yap-token--ltr { animation: yap-ltr 1.4s cubic-bezier(0.4, 0.1, 0.6, 0.9) forwards; }
+.yap-token--rtl { animation: yap-rtl 1.4s cubic-bezier(0.4, 0.1, 0.6, 0.9) forwards; }
+@keyframes yap-ltr {
+  0% { left: 0; transform: translateX(0); opacity: 0; }
+  12%, 85% { opacity: 1; }
+  100% { left: 100%; transform: translateX(-100%); opacity: 0; }
+}
+@keyframes yap-rtl {
+  0% { left: 100%; transform: translateX(-100%); opacity: 0; }
+  12%, 85% { opacity: 1; }
+  100% { left: 0; transform: translateX(0); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yap *, .yap *::before, .yap *::after { animation: none !important; }
+}
